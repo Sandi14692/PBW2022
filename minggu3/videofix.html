@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title> Multimedia - HTML 5</title>
+        <style>
+            h2{
+                background-color: aqua;
+                border : black;
+                text-align:center;
+            }
+            video{
+                display : block;
+                margin-left: auto;
+                margin-right: auto;
+                border-top: 20px solid black;
+                border-right: 1px solid black;
+                border-bottom : 20px solid black;
+                border-left: 1px solid black;
+            
+            }
+            iframe{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-top: 25px solid black;
+                border-right: 2px solid black;
+                border-bottom: 25px solid black ;
+                border-left: 2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h2> Multimedia Video - HTML 5 </h2>
+        <p>
+            <button onclick="playVid()" type="button">Klik Mulai Video</button>
+            <button onclick="pauseVid()" type="button">Pause Video </button>
+            <button onclick="durationVid()" type="button">Durasi Video</button>
+            <button onclick="controlsOn()" type="button">Controls On</button>
+            <button onclick="controlsOff()" type="button">Controls Off</button>
+            <button onclick="loopstatus()" type="button">LoopStatus</button>
+            <button onclick="LoopOn()" type="button">LoopOn</button>
+            <button onclick="LoopOff()" type="button">LoopOff</button>
+        
+        </p>
+        <video id="myVideo" width="500" class="video"
+            <source type="video/mp4" src="media/movie.mp4">
+        </video>
+        <h2>Embed Youtube</h2>
+        <p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/vVqRPy2jrmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+    </body>
+    <script>
+        var vid = document.getElementById("myVideo");
+
+        function playVid() {
+            vid.play();
+        }
+
+        function pauseVid() {
+            vid.pause();
+        }
+
+        function durationVid() {
+            alert(vid.duration);
+        }
+
+        function controlsOn() {
+            vid.controls = false;
+            vid.load ();
+        }
+
+        function controlsOff() {
+            vid.controls = false;
+            vid.load ();
+        }
+
+        function loopstatus() {
+            alert(vid.loop);
+        } 
+
+        function loopOn() {
+            vid.loop = true;
+        }
+
+        function loopOff() {
+            vid.loop = false;
+        }
+        vid.onplay = function() {
+            alert("video ini telah di putar");
+        }
+        vid.onpause = function () {
+            alert("video ini telah dipause")
+        }
+        vid.onvolumechange = function() {
+            alert("volume video ini telah diubah")
+        }
+    </script>  
+</html>
